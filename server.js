@@ -112,7 +112,9 @@ app.put('/markUnComplete', (request, response) => {
 
 })
 
+// DE-LAY-TAY handler at `/deleteItem` that deletes a todo document from the collection
 app.delete('/deleteItem', (request, response) => {
+    // accessing the 'todos' collection, delete one document that matches the filter, has an property of thing equal to itemFromJS
     db.collection('todos').deleteOne({thing: request.body.itemFromJS})
     .then(result => {
         console.log('Todo Deleted')
