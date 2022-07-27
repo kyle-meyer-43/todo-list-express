@@ -24,7 +24,7 @@ Array.from(itemCompleted).forEach((element)=>{
 
 
 async function deleteItem(){
-    const itemText = this.parentNode.childNodes[1].innerText
+    const itemText = this.parentNode.children[0].innerText
     try{
         const response = await fetch('deleteItem', {
             method: 'delete',
@@ -44,7 +44,7 @@ async function deleteItem(){
 
 async function markComplete(){
     // get the innerText of the <span>
-    const itemText = this.parentNode.childNodes[1].innerText
+    const itemText = this.parentNode.children[0].innerText
     try{
         // make fetch to markComplete path
         const response = await fetch('markComplete', {
@@ -70,7 +70,7 @@ async function markComplete(){
 }
 
 async function markUnComplete(){
-    const itemText = this.parentNode.childNodes[1].innerText
+    const itemText = this.parentNode.children[0].innerText
     try{
         const response = await fetch('markUnComplete', {
             method: 'put',
